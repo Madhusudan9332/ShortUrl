@@ -36,7 +36,7 @@ app.post("/shorten", async (req, res) => {
   const originalUrl = req.body.url;
   const shortUrl = nanoid(5);
   await urlModel.create({ originalUrl, shortUrl });
-  const prefix = "http://localhost:1080/shortURL/";
+  const prefix = "https://shorturl-z8kl.onrender.com/shortURL/";
   res.render("shortened", { originalUrl, shortUrl: prefix + shortUrl });
 });
 
